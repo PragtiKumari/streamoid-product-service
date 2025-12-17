@@ -6,29 +6,29 @@ This project simulates a real-world service used by e-commerce platforms to proc
 
 ---
 
-## 🚀 Key Features
+##  Key Features
 
-- 📁 **CSV Upload API**
+-  **CSV Upload API**
   - Accepts product catalogs in CSV format
   - Validates each row independently
   - Supports partial success (valid rows stored, invalid rows reported)
 
-- ✅ **Row-level Validation**
+-  **Row-level Validation**
   - Required fields check
   - `price ≤ mrp`
   - `quantity ≥ 0`
   - Duplicate SKU detection
 
-- 🗃️ **Persistent Storage**
+-  **Persistent Storage**
   - Stores valid products in SQLite using SQLAlchemy ORM
 
-- 📃 **Product Listing**
+-  **Product Listing**
   - Paginated listing using `page` and `limit`
 
-- 🔍 **Search & Filters**
+-  **Search & Filters**
   - Filter products by brand, color, and price range *(in progress)*
 
-- 📖 **Auto-generated API Docs**
+-  **Auto-generated API Docs**
   - Swagger UI available at `/docs`
 
 ---
@@ -43,7 +43,7 @@ This project simulates a real-world service used by e-commerce platforms to proc
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 streamoid-product-service/
 │
 ├── app/
@@ -77,3 +77,52 @@ cd streamoid-product-service
 2️⃣ Create & activate virtual environment
 ```py -m venv .venv
 .\.venv\Scripts\Activate.ps1
+
+3️⃣ Install dependencies
+```pip install -r requirements.txt
+
+4️⃣ Run the server
+```uvicorn app.main:app --reload --port 8000
+
+## 📖 API Documentation
+Once the server is running, open:
+
+👉 http://127.0.0.1:8000/docs
+
+All endpoints are documented using Swagger UI.
+
+📤 Upload Products CSV
+Using Swagger
+Go to /docs
+Select POST /upload
+Upload products.csv
+Execute
+
+Using cURL
+curl.exe -X POST "http://127.0.0.1:8000/upload" -F "file=@products.csv"
+
+Example Response
+{
+  "filename": "products.csv",
+  "stored": 20,
+  "failed": []
+}
+
+##  List Products (Pagination)
+```GET /products?page=1&limit=10
+
+Returns paginated product data.
+
+
+## Design Notes
+
+Each CSV row is validated independently to allow partial success.
+Database constraints + application-level validation ensure data integrity.
+Clean separation of concerns (routes, validation, persistence).
+Designed to be easily extensible (search, Docker, tests).
+
+
+## Author
+
+Pragati Kumari
+
