@@ -67,7 +67,7 @@ streamoid-product-service/
 - Search products (to be implemented next): `GET /products/search`  
 
 
-## ⚙️ Setup Instructions (Windows / VS Code)
+##  Setup Instructions (Windows / VS Code)
 
 1️⃣ Clone the repository
 ```powershell
@@ -84,14 +84,14 @@ cd streamoid-product-service
 4️⃣ Run the server
 ```uvicorn app.main:app --reload --port 8000
 
-## 📖 API Documentation
+---
+##  API Documentation
 Once the server is running, open:
 
 👉 http://127.0.0.1:8000/docs
 
 All endpoints are documented using Swagger UI.
-
-📤 Upload Products CSV
+``` Upload Products CSV
 Using Swagger
 Go to /docs
 Select POST /upload
@@ -107,13 +107,13 @@ Example Response
   "stored": 20,
   "failed": []
 }
-
+---
 ##  List Products (Pagination)
 ```GET /products?page=1&limit=10
 
 Returns paginated product data.
 
-
+---
 ## Design Notes
 
 Each CSV row is validated independently to allow partial success.
@@ -121,7 +121,7 @@ Database constraints + application-level validation ensure data integrity.
 Clean separation of concerns (routes, validation, persistence).
 Designed to be easily extensible (search, Docker, tests).
 
-
+---
 ## Author
 
 Pragati Kumari
