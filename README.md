@@ -6,32 +6,31 @@ This project implements all the requirements of the take-home exercise, simulati
 
 ---
 
-##  Features Implemented
+## 🚀 Features Implemented
 
--  **CSV Upload API**
+- 📁 **CSV Upload API**
   - Accepts product catalog CSV files
-  - Performs row-level validation
-  - Supports partial success (valid rows stored, invalid rows reported with reasons)
+  - Parses and validates each row
+  - Stores only valid rows in the database
 
--  **Data Validation**
-  - Required field checks
+- ✅ **Data Validation**
+  - Required field checks (`sku`, `name`, `brand`, `mrp`, `price`)
   - `price ≤ mrp`
   - `quantity ≥ 0`
-  - Duplicate SKU detection
 
--  **Persistent Storage**
+- 🗃️ **Persistent Storage**
   - Valid products stored in SQLite database
   - Implemented using SQLAlchemy ORM
 
--  **Product Listing**
+- 📃 **Product Listing**
   - Paginated listing using `page` and `limit` query parameters
 
--  **Product Search & Filtering**
+- 🔍 **Product Search & Filtering**
   - Filter products by brand
   - Filter products by color
   - Filter products by price range (`minPrice`, `maxPrice`)
 
--  **Auto-Generated API Documentation**
+- 📖 **Auto-Generated API Documentation**
   - Swagger UI available at `/docs`
 
 ---
