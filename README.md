@@ -1,34 +1,37 @@
 # Streamoid Product Service 
 
-A backend API built using **FastAPI** to validate, store, list, and search seller product catalogs uploaded via **CSV files**.
+A backend service built using **FastAPI** to validate, store, list, and search seller product catalogs uploaded via **CSV files**.
 
-This project simulates a real-world service used by e-commerce platforms to process seller catalogs before publishing them on marketplaces.
+This project implements all the requirements of the take-home exercise, simulating a real-world catalog ingestion service used by e-commerce platforms to process seller product data.
 
 ---
 
-##  Key Features
+## 🚀 Features Implemented
 
--  **CSV Upload API**
-  - Accepts product catalogs in CSV format
-  - Validates each row independently
-  - Supports partial success (valid rows stored, invalid rows reported)
+- 📁 **CSV Upload API**
+  - Accepts product catalog CSV files
+  - Performs row-level validation
+  - Supports partial success (valid rows stored, invalid rows reported with reasons)
 
--  **Row-level Validation**
-  - Required fields check
+- ✅ **Data Validation**
+  - Required field checks
   - `price ≤ mrp`
   - `quantity ≥ 0`
   - Duplicate SKU detection
 
--  **Persistent Storage**
-  - Stores valid products in SQLite using SQLAlchemy ORM
+- 🗃️ **Persistent Storage**
+  - Valid products stored in SQLite database
+  - Implemented using SQLAlchemy ORM
 
--  **Product Listing**
-  - Paginated listing using `page` and `limit`
+- 📃 **Product Listing**
+  - Paginated listing using `page` and `limit` query parameters
 
--  **Search & Filters**
-  - Filter products by brand, color, and price range *(in progress)*
+- 🔍 **Product Search & Filtering**
+  - Filter products by brand
+  - Filter products by color
+  - Filter products by price range (`minPrice`, `maxPrice`)
 
--  **Auto-generated API Docs**
+- 📖 **Auto-Generated API Documentation**
   - Swagger UI available at `/docs`
 
 ---
@@ -39,90 +42,136 @@ This project simulates a real-world service used by e-commerce platforms to proc
 - **FastAPI**
 - **SQLAlchemy**
 - **SQLite**
-- **Pytest** (for unit testing – planned)
+- **Pytest**
 
 ---
 
-##  Project Structure
+## 📂 Project Structure
+
+```
 streamoid-product-service/
 │
 ├── app/
-│ ├── main.py # FastAPI app entry point
-│ ├── db.py # Database setup
-│ ├── models.py # SQLAlchemy models
-│ ├── schemas.py # Response schemas
-│ └── upload.py # CSV upload & validation logic
+│   ├── main.py          # Application entry point
+│   ├── db.py            # Database configuration
+│   ├── models.py        # ORM models
+│   ├── schemas.py       # API response schemas
+│   └── upload.py        # CSV upload & validation logic
 │
-├── tests/ # Unit tests (to be expanded)
-├── products.csv # Sample CSV from assignment
+├── tests/               # Unit tests
+├── products.csv         # Sample CSV (from assignment)
 ├── requirements.txt
 ├── README.md
 └── .gitignore
+```
 
 ---
 
-## Features
-- Upload products via CSV: `POST /upload`  
-- List products with pagination: `GET /products?page=&limit=`  
-- Search products (to be implemented next): `GET /products/search`  
+## ⚙️ Setup Instructions (Windows / VS Code)
 
+### 1️⃣ Clone the repository
 
-##  Setup Instructions (Windows / VS Code)
-
-1️⃣ Clone the repository
 ```powershell
 git clone https://github.com/PragtiKumari/streamoid-product-service.git
 cd streamoid-product-service
+```
 
-2️⃣ Create & activate virtual environment
-```py -m venv .venv
+### 2️⃣ Create and activate virtual environment
+
+```powershell
+py -m venv .venv
 .\.venv\Scripts\Activate.ps1
+```
 
-3️⃣ Install dependencies
-```pip install -r requirements.txt
+### 3️⃣ Install dependencies
 
-4️⃣ Run the server
-```uvicorn app.main:app --reload --port 8000
+```powershell
+pip install -r requirements.txt
+```
+
+### 4️⃣ Run the server
+
+```powershell
+uvicorn app.main:app --reload --port 8000
+```
 
 ---
-##  API Documentation
+
+## 📖 API Documentation
+
 Once the server is running, open:
 
-👉 http://127.0.0.1:8000/docs
+👉 **http://127.0.0.1:8000/docs**
 
-All endpoints are documented using Swagger UI.
-``` Upload Products CSV
-Using Swagger
-Go to /docs
-Select POST /upload
-Upload products.csv
-Execute
+All endpoints are fully documented using Swagger UI.
 
-Using cURL
+---
+
+## 📤 Upload Product Catalog (CSV)
+
+### Using Swagger UI
+
+1. Open `/docs`
+2. Select `POST /upload`
+3. Upload `products.csv`
+4. Execute
+
+### Using cURL
+
+```powershell
 curl.exe -X POST "http://127.0.0.1:8000/upload" -F "file=@products.csv"
+```
 
-Example Response
+### Example Response
+
+```json
 {
   "filename": "products.csv",
   "stored": 20,
   "failed": []
 }
+```
+
 ---
-##  List Products (Pagination)
-```GET /products?page=1&limit=10
+
+## 📃 List Products (Pagination)
+
+```http
+GET /products?page=1&limit=10
+```
 
 Returns paginated product data.
 
 ---
-## Design Notes
 
-Each CSV row is validated independently to allow partial success.
-Database constraints + application-level validation ensure data integrity.
-Clean separation of concerns (routes, validation, persistence).
-Designed to be easily extensible (search, Docker, tests).
+## 🔍 Search Products
+
+```http
+GET /products/search?brand=StreamThreads&color=Red&minPrice=500&maxPrice=1000
+```
+
+Supports filtering by:
+- Brand
+- Color
+- Price range
 
 ---
-## Author
 
-Pragati Kumari
+## 🧠 Design Notes
 
+- Each CSV row is validated independently to allow partial success.
+- Validation logic ensures business rule correctness before persistence.
+- Clean separation of concerns across routing, validation, and persistence layers.
+- Database schema enforces uniqueness and data integrity.
+
+---
+
+## 👩‍💻 Author
+
+**Pragati Kumari**
+
+---
+
+## 📄 License
+
+This project is part of a take-home assignment for Streamoid Technologies.
