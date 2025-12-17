@@ -6,32 +6,32 @@ This project implements all the requirements of the take-home exercise, simulati
 
 ---
 
-## 🚀 Features Implemented
+##  Features Implemented
 
-- 📁 **CSV Upload API**
+-  **CSV Upload API**
   - Accepts product catalog CSV files
   - Performs row-level validation
   - Supports partial success (valid rows stored, invalid rows reported with reasons)
 
-- ✅ **Data Validation**
+-  **Data Validation**
   - Required field checks
   - `price ≤ mrp`
   - `quantity ≥ 0`
   - Duplicate SKU detection
 
-- 🗃️ **Persistent Storage**
+-  **Persistent Storage**
   - Valid products stored in SQLite database
   - Implemented using SQLAlchemy ORM
 
-- 📃 **Product Listing**
+-  **Product Listing**
   - Paginated listing using `page` and `limit` query parameters
 
-- 🔍 **Product Search & Filtering**
+-  **Product Search & Filtering**
   - Filter products by brand
   - Filter products by color
   - Filter products by price range (`minPrice`, `maxPrice`)
 
-- 📖 **Auto-Generated API Documentation**
+-  **Auto-Generated API Documentation**
   - Swagger UI available at `/docs`
 
 ---
@@ -46,7 +46,7 @@ This project implements all the requirements of the take-home exercise, simulati
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 streamoid-product-service/
@@ -67,7 +67,7 @@ streamoid-product-service/
 
 ---
 
-## ⚙️ Setup Instructions (Windows / VS Code)
+##  Setup Instructions (Windows / VS Code)
 
 ### 1️⃣ Clone the repository
 
@@ -97,7 +97,7 @@ uvicorn app.main:app --reload --port 8000
 
 ---
 
-## 📖 API Documentation
+##  API Documentation
 
 Once the server is running, open:
 
@@ -107,7 +107,7 @@ All endpoints are fully documented using Swagger UI.
 
 ---
 
-## 📤 Upload Product Catalog (CSV)
+##  Upload Product Catalog (CSV)
 
 ### Using Swagger UI
 
@@ -134,7 +134,7 @@ curl.exe -X POST "http://127.0.0.1:8000/upload" -F "file=@products.csv"
 
 ---
 
-## 📃 List Products (Pagination)
+##  List Products (Pagination)
 
 ```http
 GET /products?page=1&limit=10
@@ -144,7 +144,7 @@ Returns paginated product data.
 
 ---
 
-## 🔍 Search Products
+##  Search Products
 
 ```http
 GET /products/search?brand=StreamThreads&color=Red&minPrice=500&maxPrice=1000
@@ -157,7 +157,7 @@ Supports filtering by:
 
 ---
 
-## 🧠 Design Notes
+##  Design Notes
 
 - Each CSV row is validated independently to allow partial success.
 - Validation logic ensures business rule correctness before persistence.
@@ -172,6 +172,6 @@ Supports filtering by:
 
 ---
 
-## 📄 License
+##  License
 
-This project is part of a take-home assignment for Streamoid Technologies.
+This project is part of a take-home assignment for internship position at Streamoid.
