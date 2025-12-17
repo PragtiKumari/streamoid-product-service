@@ -1,4 +1,4 @@
-# Streamoid Product Service (Take-Home)
+# Streamoid Product Service 
 
 Backend service built with **FastAPI + SQLite (SQLAlchemy)**.
 
