@@ -5,20 +5,12 @@ from typing import Any
 from fastapi import APIRouter, UploadFile, File, HTTPException, Depends
 from sqlalchemy.orm import Session
 
-from .db import SessionLocal
+from .db import get_db
 from .models import Product
 
 router = APIRouter(tags=["Upload"])
 
 REQUIRED_HEADERS = {"sku", "name", "brand", "color", "size", "mrp", "price", "quantity"}
-
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 
 def _to_int(value: Any, field: str, reasons: list[str]) -> int | None:

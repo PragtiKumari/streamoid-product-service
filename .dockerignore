@@ -1,0 +1,15 @@
+.venv
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+test_products_*.db
+.git
+.gitignore
+.idea/
+.vscode/
+pytest_cache/
+.mypy_cache/
+dist/
+build/
