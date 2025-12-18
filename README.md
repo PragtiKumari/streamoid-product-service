@@ -309,24 +309,18 @@ This project is part of a take-home exercise for Streamoid (Backend Take-Home Ex
 ##
  **👨‍💻 Author**
 
-**
-Pragati Kumari
-**
 
+Pragati Kumari
 -
  GitHub: 
-(
 (https://github.com/PragtiKumari/streamoid-product-service)
-)
 
 -
- LinkedIn: 
-(
-[https://www.linkedin.com/in/yourprofile](https://www.linkedin.com/in/pragati-kumari-p16)
-)
-
+ LinkedIn:
+(https://www.linkedin.com/in/pragati-kumari-p16)
 -
  Email: pragatikumari8694@gmail.com
+ 
 ---
 
 ## 🙏 Acknowledgments
