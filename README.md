@@ -1,10 +1,10 @@
-#  Streamoid Product Service
+# Streamoid Product Service
 
 A robust backend service that helps online sellers validate, store, and search their product catalog before listing on marketplaces like Amazon, Flipkart, or Myntra.
 
 ---
 
-## 📋 Overview
+## Overview
 
 This project implements a complete backend service with the following capabilities:
 
@@ -17,7 +17,7 @@ This project implements a complete backend service with the following capabiliti
 
 ---
 
-## 🚀 Tech Stack
+## Tech Stack
 
 | Technology | Purpose |
 |------------|---------|
@@ -30,7 +30,7 @@ This project implements a complete backend service with the following capabiliti
 
 ---
 
-## ✨ Features Implemented
+## Features Implemented
 
 ### 1️⃣ CSV Upload & Validation
 
@@ -179,7 +179,7 @@ This design ensures:
 
 ---
 
-## 🧪 Unit Tests
+## Unit Tests
 
 Comprehensive test coverage includes:
 
@@ -243,7 +243,7 @@ Base endpoint: ```http://127.0.0.1:8000/```
 
 ---
 
-## 🐳 Docker Support (Bonus)
+## Docker Support 
 
 The application is fully **Docker-ready** with a complete `Dockerfile` and `.dockerignore` configuration.
 
@@ -263,7 +263,7 @@ docker run -p 8000:8000 streamoid-product-service
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 streamoid-product-service/
@@ -287,7 +287,7 @@ streamoid-product-service/
 
 ---
 
-## 🎯 Key Highlights
+## Key Highlights
 
 ✅ **All mandatory requirements implemented**  
 
@@ -304,7 +304,7 @@ streamoid-product-service/
 
 ---
 
-## 📝 API Endpoints Summary
+## API Endpoints Summary
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -315,14 +315,14 @@ streamoid-product-service/
 
 ---
 
-## 📄 License
+## License
 
 This project is part of a take-home exercise for Streamoid (Backend Take-Home Exercise).
 
 ---
 
 ##
- **👨‍💻 Author**
+ ** Author**
 
 Pragati Kumari
 - GitHub: 
@@ -333,7 +333,7 @@ Pragati Kumari
  
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgment
 
 Thank you for the opportunity to let me work on this exciting challenge! This project demonstrates best practices in API development, validation, testing, and deployment readiness.
 
