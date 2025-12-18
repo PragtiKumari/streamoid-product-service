@@ -199,7 +199,7 @@ pytest -q
 
 ---
 
-##  Running the Application
+### 5️⃣ Running the Application
 
 ### Local Setup (Without Docker)
 
@@ -225,7 +225,7 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload --port 8000
 ```
 
-5. ## Accessing the API
+5. **Accessing the API**
 
 This is a backend service and must be run locally to access the endpoints.
 
@@ -239,7 +239,7 @@ API Documentation (Swagger UI): ```http://127.0.0.1:8000/docs```
 
 Base endpoint: ```http://127.0.0.1:8000/```
 
-> Note: These URLs will not be accessible directly from GitHub or without running the application locally, as 127.0.0.1 refers to the local machine.
+> **Note:** These URLs will not be accessible directly from GitHub or without running the application locally, as 127.0.0.1 refers to the local machine.
 
 ---
 
