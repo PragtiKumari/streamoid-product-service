@@ -1,4 +1,4 @@
-# 🛍️ Streamoid Product Service
+#  Streamoid Product Service
 
 A robust backend service that helps online sellers validate, store, and search their product catalog before listing on marketplaces like Amazon, Flipkart, or Myntra.
 
@@ -301,8 +301,6 @@ streamoid-product-service/
 ## 📄 License
 
 This project is part of a take-home exercise for Streamoid (Backend Take-Home Exercise).
-
----
 
 ---
 
