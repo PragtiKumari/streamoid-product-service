@@ -232,12 +232,14 @@ This is a backend service and must be run locally to access the endpoints.
 After starting the server using:
 ```bash
 uvicorn app.main:app --reload --port 8000
-
+```
 We can access:
-API Documentation (Swagger UI): http://127.0.0.1:8000/docs
-Base endpoint: http://127.0.0.1:8000/
 
-Note: These URLs will not be accessible directly from GitHub or without running the application locally, as 127.0.0.1 refers to the local machine.
+API Documentation (Swagger UI): ```http://127.0.0.1:8000/docs```
+
+Base endpoint: ```http://127.0.0.1:8000/```
+
+> Note: These URLs will not be accessible directly from GitHub or without running the application locally, as 127.0.0.1 refers to the local machine.
 
 ---
 
@@ -287,11 +289,16 @@ streamoid-product-service/
 
 ## 🎯 Key Highlights
 
-✅ **All mandatory requirements implemented**    
+✅ **All mandatory requirements implemented**  
+
 ✅ **Clean, modular, and testable code**  
+
 ✅ **Production-oriented architecture** 
-✅ **Comprehensive error handling and validation**  
+
+✅ **Comprehensive error handling and validation** 
+
 ✅ **Edge cases handled** (duplicates, invalid rows, pagination) 
+
 ✅ **Bonus items completed** (unit tests, Docker readiness)
 
 
