@@ -315,12 +315,6 @@ streamoid-product-service/
 
 ---
 
-## License
-
-This project is part of a take-home exercise for Streamoid (Backend Take-Home Exercise).
-
----
-
 ##
  ** Author**
 
@@ -335,7 +329,7 @@ Pragati Kumari
 
 ## Acknowledgment
 
-Thank you for the opportunity to let me work on this exciting challenge! This project demonstrates best practices in API development, validation, testing, and deployment readiness.
+This project demonstrates my practices in API development, validation, testing, and deployment readiness.
 
 ---
 
